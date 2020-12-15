@@ -43,15 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ingredients.cs" />
-    <Compile Include="MeniItemsRepo.cs" />
-    <Compile Include="MenuItems.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleChallenge1_repo\ConsoleChallenge1_repo.csproj">
+      <Project>{02784996-6702-4fea-90f2-18f8cd799a51}</Project>
+      <Name>ConsoleChallenge1_repo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

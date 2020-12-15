@@ -4,3 +4,7 @@ D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge1\bin\Debug\ConsoleChal
 D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge1\obj\Debug\ConsoleChallenge1.csproj.CoreCompileInputs.cache
 D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge1\obj\Debug\ConsoleChallenge1.exe
 D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge1\obj\Debug\ConsoleChallenge1.pdb
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge1\bin\Debug\ConsoleChallenge1_repo.dll
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge1\bin\Debug\ConsoleChallenge1_repo.pdb
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge1\obj\Debug\ConsoleChallenge1.csprojAssemblyReference.cache
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge1\obj\Debug\ConsoleChallenge1.csproj.CopyComplete

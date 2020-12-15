@@ -29,25 +29,6 @@ namespace ConsoleChallenge2_Repo
 
         }
 
-        // Add a claim to the queue with the elements of a claim
-        public bool AddToQueue(int ID, ClaimType type, string description, double amount, DateTime dateOfIncident, DateTime dateOfClaim, bool isValid)
-        {
-            if (ClaimIdIsUnique(ID))
-            {
-                Claim claimToAdd = new Claim();
-                claimToAdd.ClaimID = ID;
-                claimToAdd.Type = type;
-                claimToAdd.Description = description;
-                claimToAdd.ClaimAmount = amount;
-                claimToAdd.DateOfIncident = dateOfIncident;
-                claimToAdd.DateOfClaim = dateOfClaim;
-                claimToAdd.IsValid = isValid;
-                claimQueue.Enqueue(claimToAdd);
-                return true;
-            }
-            return false;
-
-        }
         public bool ClaimIdIsUnique(int ID)
         {
             bool idIsUnique = true;

@@ -116,7 +116,7 @@ namespace ConsoleChallenge1_Tests_2
             _testWholeMenu.Add(menuTest);
             _returnWholeList = TestMenuRepo.GetEntireMenu();
 
-            Assert.AreEqual(_testWholeMenu, _returnWholeList);
+            Assert.AreEqual(_testWholeMenu.Count, _returnWholeList.Count);
             //Assert.AreSame(_testWholeMenu, TestMenuRepo.GetEntireMenu());
         }
     }
