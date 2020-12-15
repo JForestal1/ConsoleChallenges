@@ -10,14 +10,19 @@ namespace ConsoleChallenge2_Repo
     // Create an instance of the claim queue
     public class ClaimRepo
     {
-        Queue<Claim> ClaimQueue = new Queue<Claim>();
+        Queue<Claim> claimQueue = new Queue<Claim>();
 
         // Add a claim to the queue with a complete claim
         public bool AddToQueue(Claim claimToAdd)
         {
             if (ClaimIdIsUnique(claimToAdd.ClaimID))
             {
-                ClaimQueue.Enqueue(claimToAdd);
+                double daysBetweenIncidentAndClaim = (claimToAdd.DateOfClaim - claimToAdd.DateOfIncident).TotalDays;
+                if (daysBetweenIncidentAndClaim >= 0 && daysBetweenIncidentAndClaim <= 30)
+                    claimToAdd.IsValid = true;
+                else
+                    claimToAdd.IsValid = false;
+                claimQueue.Enqueue(claimToAdd);
                 return true;
             }
             return false;
@@ -37,7 +42,7 @@ namespace ConsoleChallenge2_Repo
                 claimToAdd.DateOfIncident = dateOfIncident;
                 claimToAdd.DateOfClaim = dateOfClaim;
                 claimToAdd.IsValid = isValid;
-                ClaimQueue.Enqueue(claimToAdd);
+                claimQueue.Enqueue(claimToAdd);
                 return true;
             }
             return false;
@@ -46,7 +51,7 @@ namespace ConsoleChallenge2_Repo
         public bool ClaimIdIsUnique(int ID)
         {
             bool idIsUnique = true;
-            foreach (Claim claimToTest in ClaimQueue)
+            foreach (Claim claimToTest in claimQueue)
             {
                 if (ID == claimToTest.ClaimID)
                 {
@@ -55,89 +60,38 @@ namespace ConsoleChallenge2_Repo
             }
             return idIsUnique;
         }
+        public Queue<Claim> GetEntireQueue()
+        {
+            return claimQueue;
+        }
+
+        public bool ProcessClaim()
+        {
+            var itemsInQueue = claimQueue.Count;
+            claimQueue.Dequeue();
+            if (claimQueue.Count == itemsInQueue)
+                return false;
+            return true;
+        }
+
+        public Claim GetCurrentClaim()
+        {
+            if (claimQueue.Count > 0)
+            {
+                return claimQueue.Peek();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public void SeedQueue()
+        {
+            AddToQueue(new Claim(1, Claim.ClaimType.Car, "Vehicle Accident", 1500, new DateTime(2020, 03, 03), new DateTime(2020, 04, 01), true));
+            AddToQueue(new Claim(2, Claim.ClaimType.Home, "Nasty house fire", 80000, new DateTime(2020, 05, 04), new DateTime(2020, 06, 03), true));
+            AddToQueue(new Claim(3, Claim.ClaimType.Theft, "Stolen source code", 20, new DateTime(2020, 11, 14), new DateTime(2020, 12, 13), true));
+            AddToQueue(new Claim(4, Claim.ClaimType.Theft, "Stolen cheese - late", 20, new DateTime(2020, 08, 03), new DateTime(2020, 10, 21), true));
+        }
     }
 }
-
-
-//    // Get menu item
-//    public MenuItems GetMenuItemByName(string nameToGet)
-//    {
-//        foreach (var itemToSearchFor in _listOfMenuItems)
-//        {
-//            if (itemToSearchFor.MenuName.ToLower() == nameToGet.ToLower())
-//                return itemToSearchFor;
-//        }
-
-//        return null;
-//    }
-//    // add menu item
-//    public bool AddMenuItem(MenuItems newItem)
-//    {
-//        int itemCountBeforeAdd = _listOfMenuItems.Count;
-//        _listOfMenuItems.Add(newItem);
-//        if (_listOfMenuItems.Count != itemCountBeforeAdd + 1)
-//            return false;
-//        else
-//            return true;
-//    }
-//    // delete menu item
-//    public bool RemoveMenuItem(string itemNameToDelelete)
-//    {
-//        {
-//            MenuItems itemToDelete = GetMenuItemByName(itemNameToDelelete);
-//            if (itemToDelete != null)
-//            {
-//                _listOfMenuItems.Remove(itemToDelete);
-//                return true;
-//            }
-//            else
-//                return false;
-//        }
-//    }
-//    public bool UpdateMenuItem(string itemNameToUpdate, MenuItems itemToUpdate)
-//    {
-//        bool recordFound = false;
-
-//        foreach (MenuItems allItems in _listOfMenuItems)
-//        {
-//            if (allItems.MenuName.ToLower() == itemNameToUpdate.ToLower())
-//            {
-//                recordFound = true;
-//                allItems.MenuItem = itemToUpdate.MenuItem;
-//                allItems.Description = itemToUpdate.Description;
-//                allItems.MenuName = itemToUpdate.MenuName;
-//                allItems.Price = itemToUpdate.Price;
-//            }
-//        }
-//        return recordFound;
-//    }
-//    // Update menu item ingredients
-//    public bool UpdateMenuItemIngredients(string itemNameToUpdate, string ingredientToEdit, Ingredients updatedIngredient)
-//    {
-//        bool recordFound = false;
-
-//        foreach (MenuItems allItems in _listOfMenuItems)
-//        {
-//            if (allItems.MenuName.ToLower() == itemNameToUpdate.ToLower())
-//            {
-//                foreach (Ingredients allIngredients in allItems._ListOfIngredients)
-//                {
-//                    if (allIngredients.Item == ingredientToEdit)
-//                    {
-//                        recordFound = true;
-//                        allIngredients.Item = updatedIngredient.Item;
-//                        allIngredients.Quantity = updatedIngredient.Quantity;
-//                        allIngredients.Units = updatedIngredient.Units;
-//                    }
-//                }
-//            }
-//        }
-//        return recordFound;
-//    }
-//    // show all menu items
-//    public List<MenuItems> GetEntireMenu()
-//    {
-//        return _listOfMenuItems;
-//    }
-//}
-
