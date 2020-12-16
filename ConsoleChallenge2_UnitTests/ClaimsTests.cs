@@ -17,7 +17,7 @@ namespace ConsoleChallenge2_UnitTests
         }
 
         [TestMethod]
-        public void AddTest()
+        public void TestAdd()
         {
             // arrange - IsValid set to false. should be changed within add method due to business rules
 

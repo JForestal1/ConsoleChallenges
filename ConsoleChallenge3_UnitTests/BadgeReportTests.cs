@@ -37,7 +37,7 @@ namespace ConsoleChallenge3_UnitTests
         }
 
         [TestMethod]
-        public void testGetSingleBadge()
+        public void TestGetSingleBadge()
         {
             // arrange
             List<string> testDoors = new List<string>();
@@ -51,7 +51,7 @@ namespace ConsoleChallenge3_UnitTests
         }
 
         [TestMethod]
-        public void testGetAllBadge()
+        public void TestGetAllBadge()
         {
             // arrange
             List<string> testDoors = new List<string>();
@@ -70,7 +70,7 @@ namespace ConsoleChallenge3_UnitTests
         }
 
         [TestMethod]
-        public void testDeleteAllDoors()
+        public void TestDeleteAllDoors()
         {
             // arrange
             List<string> testDoors = new List<string>();
@@ -83,7 +83,7 @@ namespace ConsoleChallenge3_UnitTests
             Assert.IsTrue(testBadgeRepo.DeleteAllDoors(1) && testBadgeRepo.GetSingleBadge(1).Doors.Count == 0);
         }
         [TestMethod]
-        public void testUpdateDoors()
+        public void TestUpdateDoors()
         {
             // arrange
             List<string> testDoors = new List<string>();

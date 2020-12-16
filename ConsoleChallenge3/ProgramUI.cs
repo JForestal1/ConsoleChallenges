@@ -148,10 +148,11 @@ namespace ConsoleChallenge3
         private void UpdateBadge()
         {
             var _workingListOfDoors = new List<string>();
-
+            // use integer input helper to get a good badge number
             int badgeNumToUpdate = InputIntHelper("\nWhat is the badge number to Update?", "\nEnter an Integer badge Number.");
             var badgeToUpdate = Badges.GetSingleBadge(badgeNumToUpdate);
             string infoLine;
+            // test to make sure an active badge is entered
             if (badgeToUpdate == null)
             {
                 Console.WriteLine("That badge is not active");
@@ -165,7 +166,7 @@ namespace ConsoleChallenge3
                 Console.WriteLine("\nWhat would you like to do?");
                 Console.WriteLine("\t 1. Remove a door");
                 Console.WriteLine("\t 2. Add a door");
-                Console.WriteLine("\t 1. Remove all doors");
+                Console.WriteLine("\t 3. Remove all doors\n");
                 string choice = Console.ReadLine();
                 switch (choice)
                 {
@@ -258,84 +259,3 @@ namespace ConsoleChallenge3
 
     }
 }
-
-
-
-//        public void AddClaim()
-//        {
-//            var newClaim = new Claim();
-//            // get claim ID
-//            Console.WriteLine("Enter Claim ID:");
-//            newClaim.ClaimID = Int32.Parse(Console.ReadLine());
-//            // Get claim type
-//            Console.WriteLine("Enter the type of claim (1. Car, 2. Home, 3. Theft)");
-//            string claimTypeString = Console.ReadLine();
-//            bool active = true;
-//            while (active)
-//            {
-//                switch (claimTypeString.ToLower())
-//                {
-//                    case "1":
-//                        {
-//                            newClaim.Type = Claim.ClaimType.Car;
-//                            active = false;
-//                            break;
-//                        }
-//                    case "2":
-//                        {
-//                            newClaim.Type = Claim.ClaimType.Home;
-//                            active = false;
-//                            break;
-//                        }
-//                    case "3":
-//                        {
-//                            newClaim.Type = Claim.ClaimType.Theft;
-//                            active = false;
-//                            break;
-//                        }
-//                    default:
-//                        {
-//                            Console.WriteLine("Enter the valid type of claim (1.Car, 2.Home, 3.Theft)");
-//                            break;
-//                        }
-//                }
-//            }
-//            // Get claim Description
-//            Console.WriteLine("Enter claim description:");
-//            newClaim.Description = Console.ReadLine();
-//            //get ammount - write helper
-//            newClaim.ClaimAmount = InputDoubleHelper("Enter the claim amount:", "Enter claim ammount in the format #.## without $ sign.");
-//            // get Date of Incident
-//            newClaim.DateOfIncident = InputDateHelper("Enter the incident date (MM/DD/YYYY):", "Enter incident date in the format MM/DD/YYYY.");
-//            // get Date of Claim
-//            newClaim.DateOfClaim = InputDateHelper("Enter the claim date (MM/DD/YYYY):", "Enter claim date in the format MM/DD/YYYY.");
-//            // get IsValid - this will be confirmed or overwritten in the add method based on business rules
-//            newClaim.IsValid = true;
-//            // Add to the queue
-//            queueOfClaims.AddToQueue(newClaim);
-//        }
-
-//        public void DisplayHeadingsHelper()
-//        {
-//            string headings = string.Format("{0,-10}", "ClaimID");
-//            headings += string.Format("{0,-10}", "Type");
-//            headings += string.Format("{0,-25}", "Description");
-//            headings += string.Format("{0,-10}", "Amount");
-//            headings += string.Format("{0,-20}", "Date of Incident");
-//            headings += string.Format("{0,-15}", "Date of Claim");
-//            headings += string.Format("{0,-15}", "Is Claim Valid");
-//            Console.WriteLine(headings);
-//        }
-
-//        public void DisplaySingleClaimHelper(Claim claimToView)
-//        {
-//            string claimDisplay = string.Format("{0,-10}", claimToView.ClaimID.ToString());
-//            claimDisplay += string.Format("{0,-10}", claimToView.Type.ToString());
-//            claimDisplay += string.Format("{0,-25}", claimToView.Description);
-//            claimDisplay += string.Format("{0,-10}", "$" + claimToView.ClaimAmount.ToString());
-//            claimDisplay += string.Format("{0,-20}", claimToView.DateOfIncident.ToShortDateString());
-//            claimDisplay += string.Format("{0,-15}", claimToView.DateOfClaim.ToShortDateString());
-//            claimDisplay += string.Format("{0,-15}", claimToView.IsValid.ToString());
-//            Console.WriteLine(claimDisplay);
-//        }
-//
