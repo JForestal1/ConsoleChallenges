@@ -44,10 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleChallenge3_repo\ConsoleChallenge3_repo.csproj">
+      <Project>{cb52d1cd-7ee6-46f0-b302-c6f8574c4cf8}</Project>
+      <Name>ConsoleChallenge3_repo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
