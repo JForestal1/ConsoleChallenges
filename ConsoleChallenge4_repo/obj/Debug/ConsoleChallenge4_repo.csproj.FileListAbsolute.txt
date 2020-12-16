@@ -1,0 +1,6 @@
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge4_repo\bin\Debug\ConsoleChallenge4_repo.dll
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge4_repo\bin\Debug\ConsoleChallenge4_repo.pdb
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge4_repo\obj\Debug\ConsoleChallenge4_repo.csprojAssemblyReference.cache
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge4_repo\obj\Debug\ConsoleChallenge4_repo.csproj.CoreCompileInputs.cache
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge4_repo\obj\Debug\ConsoleChallenge4_repo.dll
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge4_repo\obj\Debug\ConsoleChallenge4_repo.pdb

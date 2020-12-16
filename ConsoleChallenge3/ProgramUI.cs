@@ -22,7 +22,6 @@ namespace ConsoleChallenge3
         public void Menu()
         {
             bool active = true;
-            Badges.SeedUtility();
             while (active)
             {
                 Console.WriteLine("Select an Option:\n" +
@@ -49,12 +48,6 @@ namespace ConsoleChallenge3
                         {
                             Console.Clear();
                             GetAllBadges();
-                            break;
-                        }
-                    case "s":
-                        {
-                            Console.Clear();
-                            //queueOfClaims.SeedQueue();
                             break;
                         }
                     case "x":

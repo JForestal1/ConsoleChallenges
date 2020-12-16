@@ -13,7 +13,8 @@ namespace ConsoleChallenge4_repo
             Golf = 1,
             Bowling,
             Amusement_Park,
-            Concert
+            Concert,
+            Invalid
         }
 
         public int Attendees { get; set; }

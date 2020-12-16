@@ -20,6 +20,7 @@ namespace ConsoleChallenge4_repo
             return _listOfOutings;
         }
 
+        // override for costs to allow filtering
         public double GetCostsTotal(Outing.EventType filterType)
         {
             double result = 0;
@@ -32,7 +33,7 @@ namespace ConsoleChallenge4_repo
             }
             return result;
         }
-
+        
         public double GetCostsTotal()
         {
             double result = 0;

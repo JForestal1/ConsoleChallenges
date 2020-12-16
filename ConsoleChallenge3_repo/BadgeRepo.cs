@@ -9,7 +9,6 @@ namespace ConsoleChallenge3_repo
     public class BadgeRepo
     {
         Dictionary<int, List<string>> Badges = new Dictionary<int, List<string>>();
-
         public bool AddBadge(int newBadgeNumber, List<string> _doors)
         {
             if (BadgeNumberIsUnique(newBadgeNumber))
@@ -19,9 +18,7 @@ namespace ConsoleChallenge3_repo
             }
             else
                 return false;
-
         }
-
         public bool BadgeNumberIsUnique(int badgeToTest)
         {
             foreach (KeyValuePair<int, List<string>> badge in Badges)
@@ -31,7 +28,6 @@ namespace ConsoleChallenge3_repo
             }
             return true;
         }
-
         public Badge GetSingleBadge(int badgeIDToGet)
         {
             Badge returnBadge = new Badge();
