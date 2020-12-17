@@ -16,6 +16,7 @@ namespace ConsoleChallenge5_repo
             customerToAdd.FirstName = first;
             customerToAdd.LastName = last;
             customerToAdd.Type = type;
+            // add the correct email greeting based on customer type
             switch (type)
             {
                 case Customer.CustomerType.Potential:
@@ -44,6 +45,41 @@ namespace ConsoleChallenge5_repo
             {
                 return false;
             }
+        }
+        public SortedList<string, Customer> GetAllCustomers()
+        {
+            return _listOfCustomers;
+        }
+
+        public bool DeleteCustomer(string last, string first)
+        {
+            string key = last + first;
+            bool success = false;
+            foreach (KeyValuePair<string, Customer> each in _listOfCustomers)
+            {
+                if (each.Key == key)
+                {
+                    _listOfCustomers.Remove(key);
+                    success = true;
+                }
+            }
+            return success;
+        }
+
+        public bool UpdateCustomer(string last, string first, Customer changedCustomer)
+        {
+            string key = last + first;
+            bool success = false;
+            foreach (KeyValuePair<string, Customer> each in _listOfCustomers)
+            {
+                if (each.Key == key)
+                {
+                    _listOfCustomers.Remove(key);
+                    _listOfCustomers.Add(key, changedCustomer);
+                    success = true;
+                }
+            }
+            return success;
         }
     }
 }
