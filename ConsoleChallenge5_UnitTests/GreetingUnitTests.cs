@@ -44,7 +44,5 @@ namespace ConsoleChallenge5_UnitTests
 
             Assert.IsTrue(testCustomerRepo.GetAllCustomers().Count == 2);
         }
-
-
     }
 }

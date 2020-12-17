@@ -87,20 +87,9 @@ namespace ConsoleChallenge3_repo
         }
         public void SeedUtility()
         {
-            List<string> testDoors = new List<string>();
-            testDoors.Add("A1");
-            testDoors.Add("D3");
-            testDoors.Add("F4");
-            testDoors.Add("X4");
-            AddBadge(1, testDoors);
-            List<string> testDoors2 = new List<string>();
-            testDoors2.Add("B1");
-            AddBadge(2, testDoors2);
-            List<string> testDoors3 = new List<string>();
-            testDoors3.Add("B1");
-            testDoors3.Add("X1");
-            testDoors3.Add("T6");
-            AddBadge(3, testDoors3);
+            AddBadge(12345, new List<string>() { "A1", "D3", "F4", "X4" });
+            AddBadge(22233, new List<string>() { "B1" });
+            AddBadge(3113, new List<string>() { "A1", "B1", "X1", "T6" });
         }
     }
 }

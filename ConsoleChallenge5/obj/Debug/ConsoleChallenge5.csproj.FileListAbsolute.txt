@@ -1,0 +1,10 @@
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\obj\Debug\ConsoleChallenge5.csprojAssemblyReference.cache
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\obj\Debug\ConsoleChallenge5.csproj.CoreCompileInputs.cache
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\bin\Debug\ConsoleChallenge5.exe.config
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\bin\Debug\ConsoleChallenge5.exe
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\bin\Debug\ConsoleChallenge5.pdb
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\bin\Debug\ConsoleChallenge5_repo.dll
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\bin\Debug\ConsoleChallenge5_repo.pdb
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\obj\Debug\ConsoleChallenge5.csproj.CopyComplete
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\obj\Debug\ConsoleChallenge5.exe
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenge5\obj\Debug\ConsoleChallenge5.pdb

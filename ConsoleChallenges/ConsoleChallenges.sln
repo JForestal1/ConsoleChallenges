@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleChallenge5_repo", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleChallenge5_UnitTests", "..\ConsoleChallenge5_UnitTests\ConsoleChallenge5_UnitTests.csproj", "{FF87D2DD-4155-4ABC-A686-E3375D049984}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleChallenge5", "..\ConsoleChallenge5\ConsoleChallenge5.csproj", "{40DD19FD-622C-45BB-9916-2D1D35453947}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{FF87D2DD-4155-4ABC-A686-E3375D049984}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF87D2DD-4155-4ABC-A686-E3375D049984}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF87D2DD-4155-4ABC-A686-E3375D049984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40DD19FD-622C-45BB-9916-2D1D35453947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40DD19FD-622C-45BB-9916-2D1D35453947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40DD19FD-622C-45BB-9916-2D1D35453947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40DD19FD-622C-45BB-9916-2D1D35453947}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

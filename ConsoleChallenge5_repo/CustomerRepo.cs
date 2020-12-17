@@ -12,20 +12,28 @@ namespace ConsoleChallenge5_repo
 
         public bool AddCustomer(string first, string last, Customer.CustomerType type)
         {
-            Customer customerToAdd = new Customer();
-            customerToAdd.FirstName = first;
-            customerToAdd.LastName = last;
-            customerToAdd.Type = type;
+            Customer customerToAdd = new Customer(last,first,type);
             int listCountBefore = _listOfCustomers.Count;
-            _listOfCustomers.Add(last + first, customerToAdd);
-            if (listCountBefore < _listOfCustomers.Count)
+
+            //+++++++++++++++++++++++++++
+            // add test for key uniqueness
+            if (KeyIsUnique(last + first))
             {
-                return true;
+                _listOfCustomers.Add(last + first, customerToAdd);
+                if (listCountBefore < _listOfCustomers.Count)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
                 return false;
             }
+
         }
         public SortedList<string, Customer> GetAllCustomers()
         {
@@ -48,7 +56,7 @@ namespace ConsoleChallenge5_repo
             }
             if (success)
             {
-            _listOfCustomers.Remove(foundkey);
+                _listOfCustomers.Remove(foundkey);
             }
 
             return success;
@@ -58,7 +66,7 @@ namespace ConsoleChallenge5_repo
         {
             string key = last + first;
             bool found = false;
-//            Customer updatedCustomer = new Customer(newfirst, newlast, newtype);
+            //            Customer updatedCustomer = new Customer(newfirst, newlast, newtype);
             foreach (KeyValuePair<string, Customer> each in _listOfCustomers)
             {
                 if (each.Key == key)
@@ -68,10 +76,26 @@ namespace ConsoleChallenge5_repo
             }
             if (found)
             {
-                _listOfCustomers.Remove(last+first);
-                _listOfCustomers.Add(updatedCustomer.LastName+ updatedCustomer.FirstName, updatedCustomer);
+                _listOfCustomers.Remove(last + first);
+                _listOfCustomers.Add(updatedCustomer.LastName + updatedCustomer.FirstName, updatedCustomer);
             }
             return found;
+        }
+
+        public bool KeyIsUnique(string key)
+        {
+            // test to see if list is empty
+            //if (_listOfCustomers.Count != 0)
+            //{
+                foreach (KeyValuePair<string, Customer> each in _listOfCustomers)
+                {
+                    if (each.Key == key)
+                    {
+                        return false;
+                    }
+                }
+            //}
+            return true;
         }
     }
 }

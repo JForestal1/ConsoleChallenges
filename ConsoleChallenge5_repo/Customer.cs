@@ -12,7 +12,8 @@ namespace ConsoleChallenge5_repo
         {
             Potential = 1,
             Current,
-            Past
+            Past,
+            Invalid
         }
 
         public string FirstName { get; set; }
