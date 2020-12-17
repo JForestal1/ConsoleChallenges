@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleChallenge5_repo
 {
-    class CustomerRepo
+    public class CustomerRepo
     {
         SortedList<string, Customer> _listOfCustomers = new SortedList<string, Customer>();
 
@@ -16,25 +16,6 @@ namespace ConsoleChallenge5_repo
             customerToAdd.FirstName = first;
             customerToAdd.LastName = last;
             customerToAdd.Type = type;
-            // add the correct email greeting based on customer type
-            switch (type)
-            {
-                case Customer.CustomerType.Potential:
-                    {
-                        customerToAdd.EmailGreeting = "We currently have the lowest rates on Helicopter Insurance!";
-                        break;
-                    }
-                case Customer.CustomerType.Current:
-                    {
-                        customerToAdd.EmailGreeting = "Thank you for your work with us. We appreciate your loyalty. Here's a coupon.";
-                        break;
-                    }
-                case Customer.CustomerType.Past:
-                    {
-                        customerToAdd.EmailGreeting = "It's been a long time since we've heard from you, we want you back";
-                        break;
-                    }
-            }
             int listCountBefore = _listOfCustomers.Count;
             _listOfCustomers.Add(last + first, customerToAdd);
             if (listCountBefore < _listOfCustomers.Count)
@@ -51,35 +32,46 @@ namespace ConsoleChallenge5_repo
             return _listOfCustomers;
         }
 
-        public bool DeleteCustomer(string last, string first)
+        public bool DeleteCustomer(string first, string last)
         {
             string key = last + first;
+            string foundkey = "";
             bool success = false;
+            // cannot change _listofCusts from within this foreach loop apparently
             foreach (KeyValuePair<string, Customer> each in _listOfCustomers)
             {
                 if (each.Key == key)
                 {
-                    _listOfCustomers.Remove(key);
+                    foundkey = key;
                     success = true;
                 }
             }
+            if (success)
+            {
+            _listOfCustomers.Remove(foundkey);
+            }
+
             return success;
         }
 
-        public bool UpdateCustomer(string last, string first, Customer changedCustomer)
+        public bool UpdateCustomer(string first, string last, Customer updatedCustomer)
         {
             string key = last + first;
-            bool success = false;
+            bool found = false;
+//            Customer updatedCustomer = new Customer(newfirst, newlast, newtype);
             foreach (KeyValuePair<string, Customer> each in _listOfCustomers)
             {
                 if (each.Key == key)
                 {
-                    _listOfCustomers.Remove(key);
-                    _listOfCustomers.Add(key, changedCustomer);
-                    success = true;
+                    found = true;
                 }
             }
-            return success;
+            if (found)
+            {
+                _listOfCustomers.Remove(last+first);
+                _listOfCustomers.Add(updatedCustomer.LastName+ updatedCustomer.FirstName, updatedCustomer);
+            }
+            return found;
         }
     }
 }
