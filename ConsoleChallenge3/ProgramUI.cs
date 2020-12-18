@@ -122,20 +122,28 @@ namespace ConsoleChallenge3
             headings += string.Format("{0,-10}", "Door Access");
             Console.WriteLine(headings);
             // display each badge
-            foreach (KeyValuePair<int, List<string>> badge in badgesToDisplay)
+            if (badgesToDisplay != null)
             {
-                string badgeDisplay = string.Format("{0,-10}", badge.Key, "\t");
-                for (int index = 0; index < badge.Value.Count; index++)
+                foreach (KeyValuePair<int, List<string>> badge in badgesToDisplay)
                 {
-                    badgeDisplay += badge.Value[index];
-                    // ony seperate with comma if not the last door
-                    if (index < badge.Value.Count - 1)
+                    string badgeDisplay = string.Format("{0,-10}", badge.Key, "\t");
+                    for (int index = 0; index < badge.Value.Count; index++)
                     {
-                        badgeDisplay += ", ";
+                        badgeDisplay += badge.Value[index];
+                        // ony seperate with comma if not the last door
+                        if (index < badge.Value.Count - 1)
+                        {
+                            badgeDisplay += ", ";
+                        }
                     }
+                    Console.WriteLine(badgeDisplay);
                 }
-                Console.WriteLine(badgeDisplay);
             }
+            else
+            {
+                Console.WriteLine("No badges loaded.");
+            }
+
         }
 
         private void UpdateBadge()
