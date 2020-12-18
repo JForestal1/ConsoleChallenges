@@ -9,6 +9,7 @@ namespace ConsoleChallenge6_repo
     public class Car
     {
         public string Name { get; set; }
+        public string Type { get; set; }
         public int Doors { get; set; }
         public double Price { get; set; }
     }
@@ -17,11 +18,15 @@ namespace ConsoleChallenge6_repo
     {
         public double MilesPerGallon { get; set; }
         public int Horsepower { get; set; }
-        public Hybred() { }
+        public Hybred() 
+        {
+            Type = "Hybred";
+        }
 
         public Hybred(string name, int doors, double price, double MPG, int horsepower)
         {
             Name = name;
+            Type = "Hybred";
             Doors = doors;
             Price = price;
             MilesPerGallon = MPG;
@@ -32,11 +37,15 @@ namespace ConsoleChallenge6_repo
     {
         public double MilesPerGallon { get; set; }
         public int FuelCapacity { get; set; }
-        public Gas() { }
+        public Gas() 
+        {
+            Type = "Gas";
+        }
 
         public Gas(string name, int doors, double price, double MPG, int capacity)
         {
             Name = name;
+            Type = "Gas";
             Doors = doors;
             Price = price;
             MilesPerGallon = MPG;
@@ -46,11 +55,15 @@ namespace ConsoleChallenge6_repo
     public class Electric : Car
     {
         public int Range { get; set; }
-        public Electric() { }
+        public Electric() 
+        {
+            Type = "Electric";
+        }
 
         public Electric(string name, int doors, double price, int range)
         {
             Name = name;
+            Type = "Electric";
             Doors = doors;
             Price = price;
             Range = range;
