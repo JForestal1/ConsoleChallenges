@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleChallenge6_UnitTests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleChallenge6", "..\ConsoleChallenge6\ConsoleChallenge6.csproj", "{39EEF63E-79EC-4E07-A8CB-DB13C175AFBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleChallenge7", "ConsoleChallenge7\ConsoleChallenge7.csproj", "{E09979F6-C25B-49D1-99C4-FE171C40E04D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleChallenge7_repo", "..\ConsoleChallenge7_repo\ConsoleChallenge7_repo.csproj", "{E3C19137-2D2F-46A4-8E50-FA4D0073C206}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +121,14 @@ Global
 		{39EEF63E-79EC-4E07-A8CB-DB13C175AFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39EEF63E-79EC-4E07-A8CB-DB13C175AFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39EEF63E-79EC-4E07-A8CB-DB13C175AFBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E09979F6-C25B-49D1-99C4-FE171C40E04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09979F6-C25B-49D1-99C4-FE171C40E04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09979F6-C25B-49D1-99C4-FE171C40E04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09979F6-C25B-49D1-99C4-FE171C40E04D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3C19137-2D2F-46A4-8E50-FA4D0073C206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C19137-2D2F-46A4-8E50-FA4D0073C206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C19137-2D2F-46A4-8E50-FA4D0073C206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C19137-2D2F-46A4-8E50-FA4D0073C206}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

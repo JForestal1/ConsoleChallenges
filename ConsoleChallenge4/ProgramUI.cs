@@ -16,9 +16,7 @@ namespace ConsoleChallenge4
         {
             Menu();
         }
-
         // Menu
-
         public void Menu()
         {
             bool active = true;
@@ -78,7 +76,6 @@ namespace ConsoleChallenge4
                 }
             }
         }
-
         public void AddEvent()
         {
             Outing outingToAdd = new Outing();
@@ -121,7 +118,6 @@ namespace ConsoleChallenge4
             headings += string.Format("{0,-20}", "Total Cost");
             Console.WriteLine(headings);
         }
-
         public void DisplaySingleOutingHelper(Outing outtingToDisplay)
         {
             string claimDisplay = string.Format("{0,-20}", outtingToDisplay.Type);
@@ -131,7 +127,6 @@ namespace ConsoleChallenge4
             claimDisplay += string.Format("{0,-20}", "$" + outtingToDisplay.CostTotal.ToString());
             Console.WriteLine(claimDisplay);
         }
-
         private Outing.EventType InputEventTypeHelper(string prompt)
         {
             Outing.EventType typeToReturn;

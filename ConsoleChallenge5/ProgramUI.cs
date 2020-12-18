@@ -151,9 +151,7 @@ namespace ConsoleChallenge5
             {
                 Console.WriteLine("Customer not found.");
             }
-
         }
-
         private Customer.CustomerType InputEventTypeHelper(string prompt)
         {
             Customer.CustomerType typeToReturn;

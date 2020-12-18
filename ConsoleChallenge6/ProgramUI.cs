@@ -18,8 +18,6 @@ namespace ConsoleChallenge6
         }
         public void Menu()
         {
-
-            Seed();
             bool active = true;
             while (active)
             {
@@ -77,7 +75,6 @@ namespace ConsoleChallenge6
                 }
             }
         }
-
         private void AddCar()
         {
             int listCountCheck = carRepo.GetAllCars().Count;
@@ -201,219 +198,90 @@ namespace ConsoleChallenge6
             {
                 Console.WriteLine("\nNo car with that name has been entered.");
             }
-
         }
-            public void DisplayHeadingsHelper()
+        public void DisplayHeadingsHelper()
+        {
+            string headings = string.Format("{0,-10}", "Name");
+            headings += string.Format("{0,-10}", "Type");
+            headings += string.Format("{0,-12}", "# of Doors");
+            headings += string.Format("{0,-10}", "Price");
+            headings += string.Format("{0,-10}", "MPG");
+            headings += string.Format("{0,-15}", "Horsepower");
+            headings += string.Format("{0,-15}", "Fuel Capacity");
+            headings += string.Format("{0,-10}", "Range");
+            Console.WriteLine(headings);
+        }
+        public void DisplayElectricHelper(Electric carToDisplay)
+        {
+            string carDisplay = string.Format("{0,-10}", carToDisplay.Name);
+            carDisplay += string.Format("{0,-15}", carToDisplay.Type);
+            carDisplay += string.Format("{0,-7}", carToDisplay.Doors);
+            carDisplay += string.Format("{0,-10}", "$" + carToDisplay.Price);
+            carDisplay += string.Format("{0,43}", carToDisplay.Range);
+            Console.WriteLine(carDisplay);
+        }
+        public void DisplayGasHelper(Gas carToDisplay)
+        {
+            string carDisplay = string.Format("{0,-10}", carToDisplay.Name);
+            carDisplay += string.Format("{0,-15}", carToDisplay.Type);
+            carDisplay += string.Format("{0,-7}", carToDisplay.Doors);
+            carDisplay += string.Format("{0,-10}", "$" + carToDisplay.Price);
+            carDisplay += string.Format("{0,-29}", carToDisplay.MilesPerGallon);
+            carDisplay += string.Format("{0,-5}", carToDisplay.FuelCapacity);
+            Console.WriteLine(carDisplay);
+        }
+        public void DisplayHybredHelper(Hybred carToDisplay)
+        {
+            string carDisplay = string.Format("{0,-10}", carToDisplay.Name);
+            carDisplay += string.Format("{0,-15}", carToDisplay.Type);
+            carDisplay += string.Format("{0,-7}", carToDisplay.Doors);
+            carDisplay += string.Format("{0,-10}", "$" + carToDisplay.Price);
+            carDisplay += string.Format("{0,-13}", carToDisplay.MilesPerGallon);
+            carDisplay += string.Format("{0,-20}", carToDisplay.Horsepower);
+            Console.WriteLine(carDisplay);
+        }
+        private int InputIntHelper(string prompt, string errorPrompt)
+        {
+            bool goodInt = false;
+            int inputInt = 0;
+            while (!goodInt)
             {
-                string headings = string.Format("{0,-10}", "Name");
-                headings += string.Format("{0,-10}", "Type");
-                headings += string.Format("{0,-12}", "# of Doors");
-                headings += string.Format("{0,-10}", "Price");
-                headings += string.Format("{0,-10}", "MPG");
-                headings += string.Format("{0,-15}", "Horsepower");
-                headings += string.Format("{0,-15}", "Fuel Capacity");
-                headings += string.Format("{0,-10}", "Range");
-                Console.WriteLine(headings);
-            }
-            public void DisplayElectricHelper(Electric carToDisplay)
-            {
-                string carDisplay = string.Format("{0,-10}", carToDisplay.Name);
-                carDisplay += string.Format("{0,-15}", carToDisplay.Type);
-                carDisplay += string.Format("{0,-7}", carToDisplay.Doors);
-                carDisplay += string.Format("{0,-10}", "$" + carToDisplay.Price);
-                carDisplay += string.Format("{0,43}", carToDisplay.Range);
-                Console.WriteLine(carDisplay);
-            }
-            public void DisplayGasHelper(Gas carToDisplay)
-            {
-                string carDisplay = string.Format("{0,-10}", carToDisplay.Name);
-                carDisplay += string.Format("{0,-15}", carToDisplay.Type);
-                carDisplay += string.Format("{0,-7}", carToDisplay.Doors);
-                carDisplay += string.Format("{0,-10}", "$" + carToDisplay.Price);
-                carDisplay += string.Format("{0,-29}", carToDisplay.MilesPerGallon);
-                carDisplay += string.Format("{0,-5}", carToDisplay.FuelCapacity);
-                Console.WriteLine(carDisplay);
-            }
-            public void DisplayHybredHelper(Hybred carToDisplay)
-            {
-                string carDisplay = string.Format("{0,-10}", carToDisplay.Name);
-                carDisplay += string.Format("{0,-15}", carToDisplay.Type);
-                carDisplay += string.Format("{0,-7}", carToDisplay.Doors);
-                carDisplay += string.Format("{0,-10}", "$" + carToDisplay.Price);
-                carDisplay += string.Format("{0,-13}", carToDisplay.MilesPerGallon);
-                carDisplay += string.Format("{0,-20}", carToDisplay.Horsepower);
-                Console.WriteLine(carDisplay);
-            }
-            private int InputIntHelper(string prompt, string errorPrompt)
-            {
-                bool goodInt = false;
-                int inputInt = 0;
-                while (!goodInt)
-                {
-                    Console.WriteLine(prompt);
-                    string intAsString = Console.ReadLine();
-                    int parsedInt;
-                    if (Int32.TryParse(intAsString, out parsedInt))
-                    {
-                        inputInt = parsedInt;
-                        goodInt = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine(errorPrompt);
-                    }
-                }
-                return inputInt;
-            }
-            private double InputDoubleHelper(string prompt, string errorPrompt)
-            {
-                bool goodDouble = false;
-                double inputDouble = 0;
                 Console.WriteLine(prompt);
-                while (!goodDouble)
+                string intAsString = Console.ReadLine();
+                int parsedInt;
+                if (Int32.TryParse(intAsString, out parsedInt))
                 {
-                    string DoubleAsString = Console.ReadLine();
-                    double parsedDouble;
-                    if (double.TryParse(DoubleAsString, out parsedDouble))
-                    {
-                        inputDouble = parsedDouble;
-                        goodDouble = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine(errorPrompt);
-                    }
+                    inputInt = parsedInt;
+                    goodInt = true;
                 }
-                return inputDouble;
+                else
+                {
+                    Console.WriteLine(errorPrompt);
+                }
             }
-            public void Seed()
-            {
-                carRepo.AddCar(new Hybred("Prius", 3, 35900.00, 45, 120));
-                carRepo.AddCar(new Electric("Volt", 5, 45500.00, 400));
-                carRepo.AddCar(new Electric("Zinger", 5, 65500.00, 200));
-                carRepo.AddCar(new Electric("Magic", 5, 35500.00, 400));
-                carRepo.AddCar(new Gas("Charger", 4, 32500.00, 25.8, 20));
-            }
-
+            return inputInt;
         }
-
+        private double InputDoubleHelper(string prompt, string errorPrompt)
+        {
+            bool goodDouble = false;
+            double inputDouble = 0;
+            Console.WriteLine(prompt);
+            while (!goodDouble)
+            {
+                string DoubleAsString = Console.ReadLine();
+                double parsedDouble;
+                if (double.TryParse(DoubleAsString, out parsedDouble))
+                {
+                    inputDouble = parsedDouble;
+                    goodDouble = true;
+                }
+                else
+                {
+                    Console.WriteLine(errorPrompt);
+                }
+            }
+            return inputDouble;
+        }
     }
+}
 
-
-
-//    public void DisplayAllCustomers()
-//    {
-//        {
-//            // Display headings
-//            DisplayHeadingsHelper();
-//            if (customerList.GetAllCustomers().Count != 0)
-//                foreach (KeyValuePair<string, Customer> each in customerList.GetAllCustomers())
-//                {
-//                    DisplaySingleOutingHelper(each.Value);
-//                }
-//        }
-//    }
-
-//    private void DeleteCustomer()
-//    {
-//        Console.WriteLine("Enter the first name of the customer you would like to delete:");
-//        string first = Console.ReadLine();
-//        Console.WriteLine("Enter the last name of the customer you would like to delete:");
-//        string last = Console.ReadLine();
-//        if (customerList.DeleteCustomer(first, last))
-//        {
-//            Console.WriteLine("Customer record deleted.");
-//        }
-//        else
-//        {
-//            Console.WriteLine("Customer not found. No deletion occured.");
-//        }
-//    }
-//    private void UpdateCustomer()
-//    {
-//        Console.WriteLine("Enter the first name of the customer you would like to edit:");
-//        string first = Console.ReadLine();
-//        Console.WriteLine("Enter the last name of the customer you would like to edit:");
-//        string last = Console.ReadLine();
-//        // reusing KeyIsDelete to ensure customer key exists
-//        if (!customerList.KeyIsUnique(last + first))
-//        {
-//            Console.WriteLine("Enter the new first name of this customer:");
-//            string newFirst = Console.ReadLine();
-//            Console.WriteLine("Enter the new last name of this customer:");
-//            string newLast = Console.ReadLine();
-//            Customer.CustomerType newCustType = InputEventTypeHelper("\nEnter the type of customer this is:");
-//            if (newCustType != Customer.CustomerType.Invalid)
-//            {
-//                Customer newCustomer = new Customer(newFirst, newLast, newCustType);
-//                if (customerList.UpdateCustomer(first, last, newCustomer))
-//                {
-//                    Console.WriteLine("Customer Updated.");
-//                }
-//                else
-//                {
-//                    Console.WriteLine("Customer not updated. New customer name must be unique.");
-//                }
-//            }
-//        }
-//        else
-//        {
-//            Console.WriteLine("Customer not found.");
-//        }
-
-//    }
-
-//    private Customer.CustomerType InputEventTypeHelper(string prompt)
-//    {
-//        Customer.CustomerType typeToReturn;
-//        Console.WriteLine("\n" + prompt +
-//            "\n\t1. Potential" +
-//            "\n\t2. Current" +
-//            "\n\t3. Past\n");
-//        var eventTypeString = Console.ReadLine();
-//        switch (eventTypeString.ToLower())
-//        {
-//            case "1":
-//                {
-//                    typeToReturn = Customer.CustomerType.Potential;
-//                    break;
-//                }
-//            case "2":
-//                {
-//                    typeToReturn = Customer.CustomerType.Current;
-//                    break;
-//                }
-//            case "3":
-//                {
-//                    typeToReturn = Customer.CustomerType.Potential;
-//                    break;
-//                }
-//            case "4":
-//            default:
-//                {
-//                    typeToReturn = Customer.CustomerType.Invalid;
-//                    Console.WriteLine("\nThat event type is not valid");
-//                    break;
-//                }
-//        }
-//        return typeToReturn;
-//    }
-//    public void DisplayHeadingsHelper()
-//    {
-//        string headings = string.Format("{0,-20}", "First Name");
-//        headings += string.Format("{0,-20}", "Last Name");
-//        headings += string.Format("{0,-15}", "Customer Type");
-//        headings += string.Format("{0,-20}", "Email Message");
-//        Console.WriteLine(headings);
-//    }
-
-//    public void DisplaySingleOutingHelper(Customer customerToDisplay)
-//    {
-//        string claimDisplay = string.Format("{0,-20}", customerToDisplay.FirstName);
-//        claimDisplay += string.Format("{0,-20}", customerToDisplay.LastName);
-//        claimDisplay += string.Format("{0,-15}", customerToDisplay.Type);
-//        claimDisplay += string.Format("{0,-20}", customerToDisplay.EmailGreeting);
-//        Console.WriteLine(claimDisplay);
-//    }
-//}
-//}

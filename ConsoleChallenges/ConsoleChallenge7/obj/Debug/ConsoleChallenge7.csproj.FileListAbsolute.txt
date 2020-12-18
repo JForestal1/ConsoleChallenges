@@ -1,0 +1,10 @@
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\obj\Debug\ConsoleChallenge7.csprojAssemblyReference.cache
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\obj\Debug\ConsoleChallenge7.csproj.CoreCompileInputs.cache
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\bin\Debug\ConsoleChallenge7.exe.config
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\bin\Debug\ConsoleChallenge7.exe
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\bin\Debug\ConsoleChallenge7.pdb
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\bin\Debug\ConsoleChallenge7_repo.dll
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\bin\Debug\ConsoleChallenge7_repo.pdb
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\obj\Debug\ConsoleChallenge7.csproj.CopyComplete
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\obj\Debug\ConsoleChallenge7.exe
+D:\ElevenFiftyProjects\ConsoleChallenges\ConsoleChallenges\ConsoleChallenge7\obj\Debug\ConsoleChallenge7.pdb
